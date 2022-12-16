@@ -7,7 +7,7 @@ from datetime import datetime
 from pymongo import MongoClient
 
 try:
-    client = MongoClient('mongodb://mongodb:mongodb@172.17.0.1:27017')
+    client = MongoClient('mongodb://mongodb:mongodb@mongodb:27017')
     print('Connection to MongoDB Success')
 except:
     print('Connection to MongoDB Failed')
