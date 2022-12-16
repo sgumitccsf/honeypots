@@ -10,10 +10,10 @@ services:
     ports:
       - 80:80
       - 443:443
-      - 8080:8080
     command: python3 -m honeypots --setup all --options capture_commands | python3 load_mongodb.py
     volumes:
       - ./load_mongodb.py:/root/load_mongodb.py
+    tty: true
     restart: always
 
   mongodb:
@@ -26,6 +26,7 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: mongodb
     volumes:
       - ./mongodb-config:/data/configdb
+      - ./mongodb-data:/data/db
     restart: always
 
   metabase:
