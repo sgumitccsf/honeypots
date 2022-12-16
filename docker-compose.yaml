@@ -14,7 +14,6 @@ services:
     command: python3 -m honeypots --setup all --options capture_commands | python3 load_mongodb.py
     volumes:
       - ./load_mongodb.py:/root/load_mongodb.py
-    tty: true
     restart: always
 
   mongodb:
